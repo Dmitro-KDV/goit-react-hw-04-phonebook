@@ -85,7 +85,6 @@ export const App = () => {
     //   filter: prev.contacts.filter((el) => el.name.toLowerCase().includes(filterName.toLowerCase())),
     // }));
   }
-
   
       return (
           <Container>
