@@ -36,7 +36,7 @@ export const App = () => {
   //   }
   // }
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    contacts && localStorage.setItem('contacts', JSON.stringify(contacts));
   },[contacts]);
 
   // componentDidUpdate(_, prevState) {
@@ -79,8 +79,9 @@ export const App = () => {
   }
 
   const filterContacts = (filterName) => {
-    setContacts((prevContacts) => {
-      return setFilter(prevContacts.filter((el) => el.name.toLowerCase().includes(filterName.toLowerCase())))})
+    setContacts(filterName)
+    // setContacts((prevContacts) => {
+    //   return setFilter(prevContacts.filter((el) => el.name.toLowerCase().includes(filterName.toLowerCase())))})
     // this.setState((prev) => ({
     //   filter: prev.contacts.filter((el) => el.name.toLowerCase().includes(filterName.toLowerCase())),
     // }));
