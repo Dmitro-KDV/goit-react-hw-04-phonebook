@@ -1,11 +1,6 @@
 import {Form, Label} from './Phonebook.stiled';
 import { useState } from 'react'
 
-const INITIAL_STATE = {
-    name: '',
-    number: '',
-}
-
 export const FormaPhonebook = ({creatContacts}) => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
@@ -15,7 +10,7 @@ export const FormaPhonebook = ({creatContacts}) => {
         if (name === 'name') {
             setName(value);
         } else {
-            setNumber(value)
+            setNumber(value);
         }
     };
 
@@ -26,9 +21,9 @@ export const FormaPhonebook = ({creatContacts}) => {
                 setName('');
                 setNumber('');
         
-        INITIAL_STATE.name = name;
-        INITIAL_STATE.number = number;
-        creatContacts(INITIAL_STATE)
+        creatContacts({name, number});
+        setName('');
+        setNumber('');
     };
       
         return ( 
